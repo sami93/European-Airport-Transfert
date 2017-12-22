@@ -1,0 +1,32 @@
+<div class="logo">
+    <a routerLink="About" class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/Eat-logo.png"/>
+        </div>
+
+    </a>
+</div>
+<div class="sidebar-wrapper">
+
+
+    <ul class="nav nav-mobile-menu" *ngIf="isMobileMenu()">
+
+
+    </ul>
+   <!--  *ngIf="auth.isAdmin" -->
+    <div class="nav-container">
+        <ul class="nav"  >
+
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+                <a  [routerLink]="[menuItem.path]"  *ngIf="(!auth.loggedIn && menuItem.statut=='client') "  >
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}} </p>
+                </a>
+                <a  [routerLink]="[menuItem.path]"  *ngIf="((auth.loggedIn && menuItem.statut!='admin') || auth.isAdmin) && menuItem.path!='login'  "  >
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}} </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

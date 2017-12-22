@@ -1,0 +1,183 @@
+<app-toast [message]="toast.message"></app-toast>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="orange">
+                        <h4 class="title">Gestion des Véhicules</h4>
+                        <p class="category">Toutes les informations des Véhicules</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class=" cell-border  row-border hover" border="0">
+                            <thead class="text-danger">
+                            <tr>
+                                <th>Matricule</th>
+                                <th >Marque</th>
+                                <th>Puissance</th>
+                                <th>Nbre_place</th>
+                                <th >Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr *ngFor="let Vehicule of Liste_Vehicules">
+                                <td>{{Vehicule.matricule_veh}}</td>
+                                <td>{{Vehicule.marque_veh}}</td>
+                                <td>{{Vehicule.puissance_veh}}</td>
+                                <td>{{Vehicule.nombre_place}}</td>
+                                <td  align="center">
+                                    <!-- <button class="btn btn-sm btn-outline-primary" (click)="predictPerson(dataset)" *ngIf="auth.loggedIn && auth.isAdmin"><i class="fa fa-save"></i> Predict
+                                     </button> -->
+                                    <button class="btn btn-sm btn-info" (click)="getInfoVehicule(Vehicule)"><i class="fa fa-info" ></i> Info</button>
+                                    <button class="btn btn-sm btn-warning" (click)="editVehicule(Vehicule)" ><i class="fa fa-pencil"></i>
+                                        Edit</button>
+                                    <button class="btn btn-sm btn-success" (click)="generatePdf(Vehicule)"><i class="fa fa-download"></i>
+                                        PDF
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" (click)="deleteVehicule(Vehicule)" ><i class="fa fa-trash"></i>
+                                        Delete
+                                    </button>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div align="center">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Nouvelle Vehicule</button>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <form  [formGroup]="addVehicule"  >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div id="banner"><img src="assets/img/Eat-logo.png" ></div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container-fluid">
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header" data-background-color="orange">
+                                                <h4 class="title"><i class="fa fa-plus-circle"></i> Ajouter une nouvelle Véhicule</h4>
+                                                <p class="category">Remplir toutes les informations du Véhicule</p>
+                                            </div>
+
+
+                                            <table class="table table-bordered   ">
+                                                <tbody>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td>    <label for="matricule_veh"><b><i class="fa fa-car" aria-hidden="true"> Matricule_veh:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="matricule_veh" type="text" name="matricule_veh" formControlName="matricule_veh" placeholder="matricule_veh">
+                                                        </td>
+                                                    </div>
+
+
+
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td>    <label for="marque_veh"><b><i class="fa fa-car" aria-hidden="true"> Marque:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="marque_veh" type="text" name="marque_veh" formControlName="marque_veh" placeholder="marque_veh">
+                                                        </td>
+                                                    </div>
+
+
+
+                                                </tr>
+
+
+
+
+
+                                                <tr><div class="form-group">
+                                                    <td>    <label for="puissance_veh"><b><i class="fa fa-battery-3 " aria-hidden="true"> Puissance:</i> </b></label></td>
+                                                    <td>
+
+                                                        <input class="form-control" id="puissance_veh" type="text" name="puissance_veh" formControlName="puissance_veh" placeholder="puissance_veh"
+                                                        >
+                                                    </td> </div>
+                                                </tr>
+
+
+
+
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="nombre_place"><b><i class="fa fa-sort-numeric-asc   " aria-hidden="true"> Nombre_place:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="nombre_place" type="number" name="nombre_place" formControlName="nombre_place" placeholder="nombre_place" min="0"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+
+
+                            <!--   <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal"><i class="fa fa-floppy-o"></i> Close</button> -->
+                            <button class="btn btn-primary" type="submit" [disabled]="!addVehicule.valid" (click)="addVehicule()"data-dismiss="modal" ><i class="fa fa-plus"></i> Ajouter
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

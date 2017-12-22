@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Login</h4>
+                        <p class="category">Compléter toutes les informations</p>
+                    </div>
+                    <div class="card-content">
+                        <form [formGroup]="loginForm" (ngSubmit)="login_server()">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">login address</label>
+                                        <input class="form-control" type="login" name="login" formControlName="login" placeholder="login" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group form-black label-floating is-empty ">
+                                        <label class="control-label">pwd</label>
+                                        <input  class="form-control" type="password" name="pwd" formControlName="pwd" placeholder="pwd" >
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <button type="submit" class="btn btn-danger pull-right" [disabled]="!loginForm.valid"><i class="fa fa-sign-in"></i> Login</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.table td, .table th {
+    text-align: center;
+    width: 30%;
+    height: 50px;
+}
+#banner{
+    width: 60%;
+    left: 50px;
+    right: 0px;
+}
+
+#banner img{
+    width: 30%;
+    left: 0px;
+    right: 0px;
+    top: 30px;
+}
+
+.card-header{
+    background-color: 	#00CED1;
+}

@@ -1,0 +1,665 @@
+
+<div class="main-content">
+    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+    <div class="container-fluid">
+        <div id="bg">
+            <img src="/assets/img/car.jpg"  alt=""/>
+        </div>
+      <h1  style="color:orange;" align="center">
+          <teximate [text]="text" [effect]="effectOptions" [hover]="hoverOptions"></teximate>
+      </h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats" >
+                    <div class="card-header" data-background-color="orange">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Used Space</p>
+                        <h3 class="title">49/50<small>GB</small></h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats" >
+                    <div class="card-header" data-background-color="green">
+                        <i class="material-icons">store</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Revenue</p>
+                        <h3 class="title">$34,245</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats" >
+                    <div class="card-header" data-background-color="red">
+                        <i class="material-icons">info_outline</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Fixed Issues</p>
+                        <h3 class="title">75</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> Tracked from Github
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats" >
+                    <div class="card-header" data-background-color="blue">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Followers</p>
+                        <h3 class="title">+245</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" >
+                    <div class="card-header card-chart" data-background-color="green">
+                        <div class="ct-chart" id="dailySalesChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="title">Daily Sales</h4>
+                        <p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%  </span> increase in today sales.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" >
+                    <div class="card-header card-chart" data-background-color="orange">
+                        <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="title">Email Subscriptions</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" >
+                    <div class="card-header card-chart" data-background-color="red">
+                        <div class="ct-chart" id="completedTasksChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="title">Completed Tasks</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-lg-offset-3">
+                <div class="card card-nav-tabs" >
+                    <div class="card-header" data-background-color="purple">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">About us:</span>
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="active">
+                                        <a href="#profile" data-toggle="tab">
+                                            <i class="material-icons">cloud</i>
+                                            Société
+                                            <div class="ripple-container"></div></a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#messages" data-toggle="tab">
+                                            <i class="material-icons">code</i>
+                                            Service
+                                            <div class="ripple-container"></div></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="profile">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 15%;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td style="width: 85%;" align="center" >          <p>
+
+                                            EAT est une société qui vous offre un excellent service et d´une expérience de location de vehicules.
+                                            Avec une vaste gamme de véhicules, y compris des berlines compactes, des voitures à grand coffre et des véhicules de luxe, nous sommes fiers d'être votre agence préférée pour une location de véhicule.
+                                        </p></td>
+
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="messages">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 15%;" >
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td style="width: 85%;" align="center"> <p>
+
+
+
+                                            EAT vous permet de réserver en ligne votre véhicule livrée à l´heure souhaitée avec ou sans chauffeur.
+
+
+                                        </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%;" >
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked readonly>
+                                                </label>
+                                            </div>
+                                        </td >
+                                        <td style="width: 85%;" align="center">Notre outil de réservation en ligne vous permet de préciser selon votre besoin le modèle de véhicule et la durée de location pour vous permettre de profiter de votre séjour et de découvrir les différentes régions.</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- TOP5 -->
+        <div class="row" *ngIf="auth.isAdmin">
+            <div class="col-lg-6 col-md-12 col-lg-offset-3">
+                <div class="card card-nav-tabs" >
+                    <div class="card-header" data-background-color="orange">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">TOP 5:</span>
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="active">
+                                        <a href="#profile2" data-toggle="tab">
+                                            <i class="material-icons">cloud</i>
+                                            Vehicules
+                                            <div class="ripple-container"></div></a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#messages2" data-toggle="tab">
+                                            <i class="material-icons">code</i>
+                                            Clients
+                                            <div class="ripple-container"></div></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="profile2">
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                        <th>Rang</th>
+                                        <th>Matricule</th>
+                                        <th>Marque</th>
+                                        <th>Puissance</th>
+                                        <th>Nombre_place</th>
+                                        </thead>
+                                    <tbody>
+                                    <tr *ngFor="let vehicule of Liste_vehiculesTop5;let i = index" [attr.data-index]="i"    >
+                                        <td>{{i+1}}</td>
+                                        <td>{{vehicule.matricule_veh}}</td>
+                                        <td>{{vehicule.marque_veh}}</td>
+                                        <td>{{vehicule.puissance_veh}}</td>
+                                        <td>{{vehicule.nombre_place}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="messages2">
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                    <th>Rang</th>
+                                    <th>Nom</th>
+                                    <th>Adresse</th>
+                                    <th>Mail</th>
+                                    <th>Tel</th>
+                                        </thead>
+                                    <tbody>
+                                    <tr *ngFor="let client of Liste_clientsTop5;let i = index" [attr.data-index]="i"    >
+                                        <td>{{i+1}}</td>
+                                        <td>{{client.nom_client}}</td>
+                                        <td>{{client.adresse_client}}</td>
+                                        <td>{{client.mail_client}}</td>
+                                        <td>{{client.tel_client}}</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+ <!-- image sami -->
+        <div class="col-md-4 col-md-offset-4" *ngIf="auth.loggedIn && !auth.isAdmin">
+        <div class="card card-profile">
+            <div class="card-avatar">
+
+                    <img class="img" src="../assets/img/sami.jpg" style=" opacity: 1.0;" />
+
+            </div>
+
+            <div class="content">
+                <h5 class="category text-gray">Administrateur Externe</h5>
+                <h4 class="card-title">Sami GHORBEL</h4>
+                <p class="card-content">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                </p>
+                    <a routerLink="About" class="btn btn-danger btn-round">Contact</a>
+            </div>
+        </div>
+    </div>
+
+        <!-- image amira -->
+        <div class="col-md-4 col-md-offset-4" *ngIf="auth.isAdmin">
+            <div class="card card-profile">
+                <div class="card-avatar">
+
+                        <img class="img" src="../assets/img/amira.jpg" style=" opacity: 1.0;" />
+
+                </div>
+
+                <div class="content">
+                    <h5 class="category text-gray">Administrateur Interne</h5>
+                    <h4 class="card-title">Amira AZZOUZ</h4>
+                    <p class="card-content">
+                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </p>
+                    <a routerLink="About" class="btn btn-danger btn-round">Contact</a>
+                </div>
+            </div>
+        </div>
+<!--   Commentaires -->
+
+        <div class="row" *ngIf="!auth.loggedIn">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Contact</h4>
+                        <p class="category">Adresse : 2 Rue Abou Raihane Bayrouni 2080 l’Ariana<br>
+                            Tél : (216) 71 706 164<br>
+                            Fax : (216) 71 706 698<br>
+                            Contact : isi@isi.utm.tn</p>
+                    </div>
+                    <div class="card-content">
+                        <form [formGroup]="ContactForm" (ngSubmit)="Contact()">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Critiques</label>
+                                        <input class="form-control" type="text" name="commentaire" formControlName="commentaire" placeholder="Critiques" >
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <button type="submit" class="btn btn-danger pull-right" [disabled]="!ContactForm.valid"><i class="fa fa-sign-in"></i> Envoyer</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- Popup -->
+        <div align="center">
+            <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal" *ngIf="!auth.loggedIn"><i class="fa fa-plus"></i> Réservation</button>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <form  [formGroup]="addReservation"  >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div id="banner"><img src="assets/img/Eat-logo.png" ></div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container-fluid">
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header" data-background-color="orange">
+                                                <h4 class="title"><i class="fa fa-plus-circle"></i> Ajouter une nouvelle Reservation</h4>
+                                                <p class="category">Remplir toutes les informations du Reservation</p>
+                                            </div>
+
+
+                                            <table class="table table-bordered   ">
+                                                <tbody>
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td>    <label for="nom_client"><b><i class="fa fa-male" aria-hidden="true"> nom_client:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="nom_client" type="text" name="nom_client" formControlName="nom_client" placeholder="nom_client">
+                                                        </td>
+                                                    </div>
+
+
+
+                                                </tr>
+
+
+
+
+
+                                                <tr><div class="form-group">
+                                                    <td>    <label for="adresse_client"><b><i class="fa fa-address-card-o " aria-hidden="true"> adresse_client:</i> </b></label></td>
+                                                    <td>
+
+                                                        <input class="form-control" id="adresse_client" type="text" name="adresse_client" formControlName="adresse_client" placeholder="adresse_client"
+                                                        >
+                                                    </td> </div>
+                                                </tr>
+
+
+
+
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="tel_client"><b><i class="fa fa-sort-numeric-asc   " aria-hidden="true"> tel_client:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="tel_client" type="text" name="tel_client" formControlName="tel_client" placeholder="tel_client"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="mail_client"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> mail_client:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="mail_client" type="email" name="text" formControlName="mail_client" placeholder="mail_client"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+
+
+                                                <tr>
+                                                    <div class="form-group form-black label-floating is-empty">
+
+                                                        <td>    <label  for="Date_arrivée"><b><i class="fa fa-calendar" aria-hidden="true"> Date_arrivée:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="Date_arrivée" type="date" name="Date_arrivée" formControlName="Date_arrivée" placeholder="Date_arrivée">
+                                                        </td>
+                                                    </div>
+
+
+
+                                                </tr>
+
+
+
+
+
+                                                <tr><div class="form-group">
+                                                    <td>    <label for="destination"><b><i class="fa fa-address-card-o " aria-hidden="true"> Destination:</i> </b></label></td>
+                                                    <td>
+
+                                                        <input class="form-control" id="destination" type="text" name="destination" formControlName="destination" placeholder="Destination"
+                                                        >
+                                                    </td> </div>
+                                                </tr>
+
+
+
+
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="heure_de_arrivée"><b><i class="fa fa-sort-numeric-asc   " aria-hidden="true"> Heure_arrivée:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="heure_de_arrivée" type="date" name="heure_de_arrivée" formControlName="heure_de_arrivée" placeholder="Heure_arrivée"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="nbr_voyageur"><b><i class="fa fa-sort-numeric-desc " aria-hidden="true"> Nbr_voyageur:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="nbr_voyageur" type="number" name="nbr_voyageur" formControlName="nbr_voyageur" placeholder="nbr_voyageur"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="matricule_veh"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> matricule_veh:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="matricule_veh" type="text" name="matricule_veh" formControlName="matricule_veh" placeholder="matricule_veh"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="marque_veh"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> marque_veh:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="marque_veh" type="text" name="marque_veh" formControlName="marque_veh" placeholder="marque_veh"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="puissance_veh"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> puissance_veh:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="puissance_veh" type="text" name="puissance_veh" formControlName="puissance_veh" placeholder="puissance_veh"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="nombre_place"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> nombre_place:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="nombre_place" type="number" name="nombre_place" formControlName="nombre_place" placeholder="nombre_place"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="nombre_place"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> nom_type:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="nom_type" type="text" name="nom_type" formControlName="nom_type" placeholder="nom_type"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="tarif"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> tarif:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="tarif" type="number" name="tarif" formControlName="tarif" placeholder="tarif"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="nom_local"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> nom_local:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="nom_local" type="text" name="nom_local" formControlName="nom_local" placeholder="nom_local"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+
+
+                            <!--   <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal"><i class="fa fa-floppy-o"></i> Close</button> -->
+                            <button class="btn btn-primary" type="submit" [disabled]="!addReservation.valid" data-dismiss="modal" (click)="Reservation_Add()" ><i class="fa fa-plus"></i> Ajouter
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!--
+<popup>
+    <button type="submit" class="btn btn-danger pull-right" (click)="ClickButton()" ><i class="fa fa-sign-in"></i> Réservation</button>
+</popup>
+<button type="submit" class="btn btn-danger pull-right" (click)="ClickButton()" ><i class="fa fa-sign-in"></i> Réservation</button>
+
+-->

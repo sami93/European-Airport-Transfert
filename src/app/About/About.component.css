@@ -1,0 +1,55 @@
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+img {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.letter{
+    font-size: 250%;
+    text-shadow: 1px 1px 1px rgba(#000, .5);
+}
+.word{    font-size: 250%;
+    background-color: red;
+}
+.letter{    font-size: 250%;
+    color: blue;
+}
+.table td, .table th {
+    text-align: center;
+    width: 30%;
+    height: 50px;
+}
+#banner{
+    width: 60%;
+    left: 50px;
+    right: 0px;
+}
+
+#banner img{
+    width: 30%;
+    left: 0px;
+    right: 0px;
+    top: 30px;
+}

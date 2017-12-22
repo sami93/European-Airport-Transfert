@@ -1,0 +1,69 @@
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<app-toast [message]="toast.message"></app-toast>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h4 class="title">Gestion des Reservations</h4>
+                        <p class="category">Toutes les informations des Reservations</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class=" cell-border  row-border hover" border="0">
+                            <thead class="text-danger">
+                            <tr>
+
+                                <th>Destination</th>
+
+                                <th>Nbr_voyageur</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            <tr *ngFor="let reservation of Liste_Reservations">
+
+                                <td>{{reservation.destination}}</td>
+
+                                <td>{{reservation.nbr_voyageur}}</td>
+
+                                <td  align="center">
+                                    <!-- <button class="btn btn-sm btn-outline-primary" (click)="predictPerson(dataset)" *ngIf="auth.loggedIn && auth.isAdmin"><i class="fa fa-save"></i> Predict
+                                     </button> -->
+                                    <button class="btn btn-sm btn-info" (click)="getInfoReservation(reservation)"><i class="fa fa-info" ></i> Info</button>
+                                    <button class="btn btn-sm btn-warning" (click)="editReservation(reservation)" *ngIf="auth.isAdmin" ><i class="fa fa-pencil"></i>
+                                        Edit</button>
+                                    <button class="btn btn-sm btn-success" (click)="generatePdf(reservation)"><i class="fa fa-download"></i>
+                                        PDF
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" (click)="deleteReservation(reservation)" *ngIf="auth.isAdmin"><i class="fa fa-trash" ></i>
+                                        Delete
+                                    </button>
+
+                                </td>
+
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>

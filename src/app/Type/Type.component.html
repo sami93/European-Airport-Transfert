@@ -1,0 +1,165 @@
+<app-toast [message]="toast.message"></app-toast>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="orange">
+                        <h4 class="title">Gestion des Types</h4>
+                        <p class="category">Toutes les informations des Types</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                               class=" cell-border  row-border hover" border="0">
+                            <thead class="text-danger">
+                            <tr>
+                                <th>Nom</th>
+                                <th>Tarif</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr *ngFor="let Type of Liste_Types">
+                                <td>{{Type.nom_type}}</td>
+                                <td>{{Type.tarif}}</td>
+                                <td align="center">
+                                    <!-- <button class="btn btn-sm btn-outline-primary" (click)="predictPerson(dataset)" *ngIf="auth.loggedIn && auth.isAdmin"><i class="fa fa-save"></i> Predict
+                                     </button> -->
+                                    <button class="btn btn-sm btn-info" (click)="getInfoType(Type)"><i
+                                            class="fa fa-info"></i> Info
+                                    </button>
+                                    <button class="btn btn-sm btn-warning" (click)="editType(Type)"><i
+                                            class="fa fa-pencil"></i>
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-sm btn-success" (click)="generatePdf(Type)"><i
+                                            class="fa fa-download"></i>
+                                        PDF
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" (click)="deleteType(Type)"><i
+                                            class="fa fa-trash"></i>
+                                        Delete
+                                    </button>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div align="center">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i
+                    class="fa fa-plus"></i> Nouveau Type
+            </button>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <form [formGroup]="addType">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div id="banner"><img src="assets/img/Eat-logo.png"></div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container-fluid">
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header" data-background-color="orange">
+                                                <h4 class="title"><i class="fa fa-plus-circle"></i> Ajouter une Nouveau
+                                                    Type</h4>
+                                                <p class="category">Remplir toutes les informations du Type</p>
+                                            </div>
+
+
+                                            <table class="table table-bordered   ">
+                                                <tbody>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td><label for="nom_type"><b><i class="fa fa-car"
+                                                                                        aria-hidden="true">
+                                                            nom_type:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="nom_type" type="text"
+                                                                   name="nom_type" formControlName="nom_type"
+                                                                   placeholder="nom_type">
+                                                        </td>
+                                                    </div>
+
+
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td><label for="tarif"><b><i class="fa fa-car"
+                                                                                     aria-hidden="true"> Marque:</i>
+                                                        </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="tarif" type="number"
+                                                                   name="tarif" formControlName="tarif"
+                                                                   placeholder="tarif" min="0">
+                                                        </td>
+                                                    </div>
+
+
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+
+
+                            <!--   <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal"><i class="fa fa-floppy-o"></i> Close</button> -->
+                            <button class="btn btn-primary" type="submit" [disabled]="!addType.valid"
+                                    (click)="ajouterType()" data-dismiss="modal"><i class="fa fa-plus"></i> Ajouter
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

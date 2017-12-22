@@ -1,0 +1,194 @@
+<app-toast [message]="toast.message"></app-toast>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="YELLOW">
+                        <h4 class="title">Gestion des Utilisateurs</h4>
+                        <p class="category">Toutes les informations des Utilisateurs</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class=" cell-border  row-border hover" border="0">
+                            <thead class="text-danger">
+                            <tr>
+                                <th >Nom</th>
+                                <th>Adresse</th>
+                                <th>Type</th>
+                                <th>Mail</th>
+                                <th >Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+
+                            <tr *ngFor="let Utilisateur of Liste_Utilisateurs">
+                                <td>{{Utilisateur.nom_admin}}</td>
+                                <td>{{Utilisateur.adresse_admin}}</td>
+                                <td>{{Utilisateur.type_admin}}</td>
+                                <td>{{Utilisateur.mail_admin}}</td>
+                                <td  align="center">
+                                    <!-- <button class="btn btn-sm btn-outline-primary" (click)="predictPerson(dataset)" *ngIf="auth.loggedIn && auth.isAdmin"><i class="fa fa-save"></i> Predict
+                                     </button> -->
+                                    <button class="btn btn-sm btn-info" (click)="getInfoUtilisateur(Utilisateur)"><i class="fa fa-info" ></i> Info</button>
+                                    <button class="btn btn-sm btn-warning" (click)="editUtilisateur(Utilisateur)" ><i class="fa fa-pencil"></i>
+                                        Edit</button>
+                                    <button class="btn btn-sm btn-success" (click)="generatePdf(Utilisateur)"><i class="fa fa-download"></i>
+                                        PDF
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" (click)="deleteUtilisateur(Utilisateur)" ><i class="fa fa-trash"></i>
+                                        Delete
+                                    </button>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div align="center">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Nouveau Utilisateur</button>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <form  [formGroup]="addUtilisateur"  >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            <div id="banner"><img src="assets/img/Eat-logo.png" ></div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container-fluid">
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header" data-background-color="#40ff00">
+                                                <h4 class="title"><i class="fa fa-plus-circle"></i> Ajouter un nouveau Utilisateur</h4>
+                                                <p class="category">Remplir toutes les informations du Utilisateur</p>
+                                            </div>
+
+
+                                            <table class="table table-bordered   ">
+                                                <tbody>
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+
+                                                        <td>    <label for="nom_admin"><b><i class="fa fa-male" aria-hidden="true"> Nom:</i> </b></label></td>
+
+
+                                                        <td>
+
+                                                            <input class="form-control" id="nom_admin" type="text" name="nom_admin" formControlName="nom_admin" placeholder="Nom">
+                                                        </td>
+                                                    </div>
+
+
+
+                                                </tr>
+
+
+
+
+
+                                                <tr><div class="form-group">
+                                                    <td>    <label for="adresse_admin"><b><i class="fa fa-address-card-o " aria-hidden="true"> Adresse:</i> </b></label></td>
+                                                    <td>
+
+                                                        <input class="form-control" id="adresse_admin" type="text" name="adresse_admin" formControlName="adresse_admin" placeholder="Adresse"
+                                                        >
+                                                    </td> </div>
+                                                </tr>
+
+
+
+
+
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="type_admin"><b><i class="fa fa-sort-numeric-asc   " aria-hidden="true"> Type:</i> </b></label></td>
+                                                        <td>
+<select id="type_admin" name="type_admin" formControlName="type_admin" placeholder="Type"class="form-control">
+    <option value="interne">interne</option>
+    <option value="externe">externe</option>
+</select>
+                                                        </td>
+                                                         <!--   <input class="form-control" id="type_admin" type="text" name="type_admin" formControlName="type_admin" placeholder="Type"
+                                                            >                </td>
+                                                            -->
+
+                                                    </div>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="mail_admin"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> Mail:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="mail_admin" type="email" name="mail_admin" formControlName="mail_admin" placeholder="Mail"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group">
+                                                        <td>    <label for="Password"><b><i class="fa fa-envelope-open-o " aria-hidden="true"> Password:</i> </b></label></td>
+                                                        <td>
+
+                                                            <input class="form-control" id="Password" type="password" name="password_admin" formControlName="password_admin" placeholder="password_admin"
+                                                            >                </td>
+
+                                                    </div>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+
+
+                            <!--   <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal"><i class="fa fa-floppy-o"></i> Close</button> -->
+                            <button class="btn btn-primary" type="submit" [disabled]="!addUtilisateur.valid" (click)="ajouterUtilisateur()"data-dismiss="modal" ><i class="fa fa-plus"></i> Ajouter
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
